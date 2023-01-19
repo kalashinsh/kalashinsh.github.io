@@ -1,0 +1,32 @@
+/* Default styles */
+body {
+    background-image: url('mos-design-ArcuXI-i7bQ-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* or scroll */
+    color: white;
+}
+#hangman-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form-container {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+  
+  
+
+
+  

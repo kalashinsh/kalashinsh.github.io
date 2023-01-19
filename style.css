@@ -1,0 +1,10 @@
+body {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: rgb(9, 255, 0);
+    background-image: url(attels1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
