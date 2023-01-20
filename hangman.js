@@ -1,35 +1,36 @@
-// Vārdu skaits
-var words = ["aka", "roka", "acis", "dators", "telefons", "kafija", "zieds", "koks", "zivs", "dzivnieks", "lapa" , ];
+// Array of words
+var words = ["aka", "roka", "acis", "dators", "telefons", "kafija", "zieds", "koks", "zivs", "dzivnieks", "lapa"];
 
-// Izvēlas random vārdu
+// Select a random word from the array
 var wordToGuess = words[Math.floor(Math.random() * words.length)];
 
-// Dzīvību skaits
+// Number of lives
 var lives = 6;
-// Vārds kurš parādas
+// Word to display
 var displayWord = "_".repeat(wordToGuess.length);
 
-// Funkcija, kura pārbauda vai burts ir vārdā
+// Function to check if a letter is in the word to guess
 function checkLetter() {
   var letter = document.getElementById("letter").value;
-  // Pārbauda vai burts ir vārdā
+  // Check if the letter is in the word
   if (wordToGuess.includes(letter)) {
-    //Nomaina "_" ar pareizo burtu
+    // Replace the "_" with the correct letter
     for (var i = 0; i < wordToGuess.length; i++) {
       if (wordToGuess[i] === letter) {
         displayWord = displayWord.substr(0, i) + letter + displayWord.substr(i + 1);
       }
     }
-    // pārbauda vai vārds ir pareiz
+    // Check if the word is complete
     if (!displayWord.includes("_")) {
-      alert("Tu uzvarējI!! Vārds bija  " + wordToGuess);
+      alert("You won! The word was " + wordToGuess);
     }
   } else {
     lives--;
     if (lives === 0) {
-      alert("Tu zaudēji! ārds bija " + wordToGuess);
+      alert("You lost! The word was " + wordToGuess);
     }
   }
   // Update the displayWord element
   document.getElementById("displayWord").innerHTML = displayWord;
+  document.getElementById("lives").innerHTML = "Lives left: " + lives;
 }

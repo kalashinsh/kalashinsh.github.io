@@ -17,16 +17,94 @@ body {
     align-items: center;
     justify-content: center;
 }
-#form-container {
+form {
     text-align: center;
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#logo {
+    position: absolute;
+    top: 0;
     left: 0;
+    width: 50px; /* adjust as needed */
+    height: 50px; /* adjust as needed */
+    margin-left: 25px;
+    margin-top: 25px;
+  }
+  #logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  #displayWord {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        text-align: center;
+}
+.copyright {
+    position: absolute;
+    bottom: 0;
     right: 0;
+    padding: 5px;
+}
+#menu {
+    text-align: center; /* center the menu horizontally */
+}
+button {
+    /* Gradient background */
+    background: linear-gradient(to bottom, #ff009d, #ff0022);
+    /* Rounded edges */
+    border-radius: 10px;
+    /* Text color */
+    color: white;
+    /* Text size and font */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    /* Padding */
+    padding: 12px 24px;
+    /* Border */
+    border: none;
+    /* Box shadow */
+    box-shadow: 2px 2px 3px #999;
+    /* Transition effect for hover */
+    transition: all 0.2s ease-in-out;
 }
 
-  
-  
+button:hover {
+    /* Change background color on hover */
+    background: linear-gradient(to bottom, #ff0080, #f700ff);
+    /* Change cursor on hover */
+    cursor: pointer;
+    /* Scale up on hover */
+    transform: scale(1.1);
+}
 
+#menu li a {
+    /* Style for all links in the menu */
+    text-decoration: none; /* remove underline */
+    color: rgb(107, 0, 0); /* set text color */
+    font-size: 1.2em; /* increase font size */
+    padding: 10px 20px; /* add padding to the links */
+    background-color: #302525; /* add a background color */
+    border-radius: 10px; /* add rounded corners */
+}
 
-  
+#menu li a:hover {
+    /* Style when the link is hovered over */
+    background-color: #ccc; /* change background color on hover */
+    color: white; /* change text color on hover */
+}
+
+#menu li a#section1 {
+    /* Style specifically for the "Section 1" link */
+    background-color: #f4f4f4; /* Add a background color */
+    padding: 10px; /* Add some padding */
+    border-radius: 10px; /* Add rounded corners */
+}
+#menu li {
+    display: inline-block; /* change display to inline-block */
+}
