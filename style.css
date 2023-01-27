@@ -8,3 +8,26 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.hangman-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+const aboutLink = document.querySelector("#menu a[href='#section1']");
+const aboutSection = document.getElementById("about");
+
+aboutLink.addEventListener("click", function() {
+  if (aboutSection.style.display === "none") {
+    aboutSection.style.display = "block";
+  } else {
+    aboutSection.style.display = "none";
+  }
+});
+

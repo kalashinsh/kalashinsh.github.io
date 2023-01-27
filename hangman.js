@@ -1,36 +1,81 @@
-// Array of words
-var words = ["aka", "roka", "acis", "dators", "telefons", "kafija", "zieds", "koks", "zivs", "dzivnieks", "lapa"];
-
-// Select a random word from the array
+var words = [ "book", "pencil", "computer", "desk", "chair", "window", "door", "light", "table", "bed", "house", "tree", "car", "dog", "cat", "flower", "grass", "sky", "ocean", "beach", "mountain", "river", "lake", "sun", "moon", "star", "cloud", "rain", "snow", "ice", "storm", "wind", "fire", "earth", "air"];
 var wordToGuess = words[Math.floor(Math.random() * words.length)];
-
-// Number of lives
-var lives = 6;
-// Word to display
+var lives = 10;
 var displayWord = "_".repeat(wordToGuess.length);
+var usedLetters = [];
 
-// Function to check if a letter is in the word to guess
 function checkLetter() {
   var letter = document.getElementById("letter").value;
-  // Check if the letter is in the word
+  
+  if (usedLetters.includes(letter)) {
+    alert("You have already used that letter. Please choose another one.");
+    return;
+  }
+  
+  usedLetters.push(letter);
+  document.getElementById("display-used-letters").textContent = "Used letters: " + usedLetters.join(", ");
+
   if (wordToGuess.includes(letter)) {
-    // Replace the "_" with the correct letter
     for (var i = 0; i < wordToGuess.length; i++) {
       if (wordToGuess[i] === letter) {
         displayWord = displayWord.substr(0, i) + letter + displayWord.substr(i + 1);
       }
     }
-    // Check if the word is complete
-    if (!displayWord.includes("_")) {
-      alert("You won! The word was " + wordToGuess);
-    }
   } else {
     lives--;
     if (lives === 0) {
-      alert("You lost! The word was " + wordToGuess);
+      alert("You lose!");
+      return;
     }
   }
-  // Update the displayWord element
-  document.getElementById("displayWord").innerHTML = displayWord;
-  document.getElementById("lives").innerHTML = "Lives left: " + lives;
+
+  document.getElementById("displayWord").textContent = displayWord;
+  document.getElementById("lives").textContent = "Lives: " + lives;
+
+  if (!displayWord.includes("_")) {
+    alert("You win!");
+  }
 }
+
+// Function to check if the user inputs the full word
+function checkFullWord() {
+  var fullWord = document.getElementById("fullWord").value;
+  if (fullWord === wordToGuess) {
+    alert("You win!");
+  } else {
+    lives--;
+    if (lives === 0) {
+      alert("You lose!");
+      return;
+    }
+    document.getElementById("lives").textContent = "Lives: " + lives;
+    alert("Incorrect, try again!");
+  }
+}
+
+const aboutButton = document.querySelector("a[href='#section1']");
+const aboutSection = document.getElementById("about");
+
+aboutButton.addEventListener("click", function(){
+    if(aboutSection.style.display === "none"){
+        aboutSection.style.display = "block";
+    } else {
+        aboutSection.style.display = "none";
+    }
+});
+
+const logo = document.getElementById("logo");
+
+logo.addEventListener("click", function(){
+    window.location.href =  "https://www.fiverr.com/kalashinsh/expert-web-and-app-development";
+  });
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+      // Add a new page here
+      // For example, you can create a new div element and append it to the body
+      var newPage = $("<div>").text("This is a new page");
+      $("body").append(newPage);
+    }
+  });
+  

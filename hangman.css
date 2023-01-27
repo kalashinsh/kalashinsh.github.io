@@ -7,10 +7,18 @@ body {
     color: white;
 }
 #hangman-game {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    float: left;
+    left: 0;
+    top: 10;
+    margin-top: 120px;
 }
 .center {
     display: flex;
@@ -28,8 +36,8 @@ form {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px; /* adjust as needed */
-    height: 50px; /* adjust as needed */
+    width: 50px; /* maina pēc vajadzības*/
+    height: 50px; /* maina pēc vajadzības*/
     margin-left: 25px;
     margin-top: 25px;
   }
@@ -44,6 +52,10 @@ form {
         transform: translate(-50%, -50%);
         font-size: 20px;
         text-align: center;
+        letter-spacing: 20px;
+        display: flex;
+        justify-content: center;
+        margin: 20px;
 }
 .copyright {
     position: absolute;
@@ -52,7 +64,7 @@ form {
     padding: 5px;
 }
 #menu {
-    text-align: center; /* center the menu horizontally */
+    text-align: center; /* Centrē izvēli */
 }
 button {
     /* Gradient background */
@@ -76,7 +88,7 @@ button {
 
 button:hover {
     /* Change background color on hover */
-    background: linear-gradient(to bottom, #ff0080, #f700ff);
+    background: linear-gradient(to bottom,  #2196F3,  #2196F3);
     /* Change cursor on hover */
     cursor: pointer;
     /* Scale up on hover */
@@ -86,10 +98,10 @@ button:hover {
 #menu li a {
     /* Style for all links in the menu */
     text-decoration: none; /* remove underline */
-    color: rgb(107, 0, 0); /* set text color */
+    color: rgb(255, 249, 249); /* set text color */
     font-size: 1.2em; /* increase font size */
     padding: 10px 20px; /* add padding to the links */
-    background-color: #302525; /* add a background color */
+    background-color: #00fff2; /* add a background color */
     border-radius: 10px; /* add rounded corners */
 }
 
@@ -107,4 +119,65 @@ button:hover {
 }
 #menu li {
     display: inline-block; /* change display to inline-block */
+    padding: 10px;
 }
+#displayWord span {
+    display: inline-block;
+    position: center;
+}
+
+#displayWord span::before {
+    content: "";
+    width: 10px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#hangman-img {
+    width: 20%; /* adjust as needed */
+    height: auto; /* keep aspect ratio */
+}
+#lives {
+    position: relative; /* position the element relative to its normal position */
+    z-index: 0; /* set the z-index to 0 to position it below the hangman image */
+    margin-top: 230px;
+}
+#used-letters {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+}
+/* About */
+.about {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* or any specific width you want */
+    text-align: center; /* or left/right */
+    display: none;
+}
+.about {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  #about-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+function showAbout(){
+    var aboutSection = document.getElementById("about-section");
+    if(aboutSection.style.display === "none"){
+        aboutSection.style.display = "block";
+    }else{
+        aboutSection.style.display = "none";
+    }
+}
+  

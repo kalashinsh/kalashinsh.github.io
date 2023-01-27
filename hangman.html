@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      </head>      
-    <title>Hangman spēle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
     <link rel="stylesheet" type="text/css" href="hangman.css">
     <link rel="stylesheet" href="animate.css">
 </head>
 <body>
-    <div id="menu">
-        <ul>
-          <li><a href="#section1">Par</a>
-          <li><a href="#section2">Kontakti</a></li>
-          <li><a href="#section3">Jaunumi</a></li>
-        </ul>
-      </div>      
-    <div id="logo">
-      <img src="logo.png" alt="Logo">
-    </div>
-    <div id="hangman-game">
-      <img src="hangman.jpg" alt="Hangman game">
-    </div>
-    <div class="copyright">MK Copyright © 2023</div>
-    <form>
-      <label for="letter">Enter a letter:</label>
-      <input type="text" id="letter" name="letter">
-      <button type="button" onclick="checkLetter()">Mini</button>
-    </form>
-    <p id="displayWord">aka</p>
-    <p id="lives">Mēģinājumu skaits:</p>
-    <script src="hangman.js"></script>
-  </body>  
+  <div id="menu">
+      <ul>
+        <li><a href="#section1">About</a></li>
+        <li><a href="#section2">News</a></li>
+        <li><a href="#section3">Contacts</a></li>
+      </ul>
+  </div>      
+  <div id="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <p id="displayWord"></p>
+  <p id="lives"></p>
+  <div id="used-letters">
+    <p id="display-used-letters">Used letters: </p>
+  </div>
+  <div id="hangman-game">
+    <img src="hangman.jpg" alt="Hangman game">
+  </div>
+  <form>
+    <label for="letter">Write a letter:</label>
+    <input type="text" id="letter" name="letter">
+    <button type="button" onclick="checkLetter()">Guess</button>
+  </form>
+  <div class="copyright">MK Copyright © 2023</div>
+  <script src="hangman.js"></script>
+  <section id="section1" class="about">
+    <h1>About</h1>
+    <p>This is the about section for the hangman game.</p>
+  </section>
+</body>
 </html>
+
+
+
