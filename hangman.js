@@ -4,6 +4,26 @@ var lives = 10;
 var displayWord = "_".repeat(wordToGuess.length);
 var usedLetters = [];
 
+// Array to store image URLs
+var imageList = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
+  "9.jpg",
+  // ... add more images as needed
+];
+
+// Variable to keep track of current image
+var currentImage = 0;
+
+// Get reference to the image element
+var image = document.getElementById("image");
+
 function checkLetter() {
   var letter = document.getElementById("letter").value;
   
@@ -27,6 +47,9 @@ function checkLetter() {
       alert("You lose!");
       return;
     }
+    // Increment the current image index and update the image source
+    currentImage++;
+    image.src = imageList[currentImage % imageList.length];
   }
 
   document.getElementById("displayWord").textContent = displayWord;
@@ -53,6 +76,7 @@ function checkFullWord() {
   }
 }
 
+
 const aboutButton = document.querySelector("a[href='#section1']");
 const aboutSection = document.getElementById("about");
 
@@ -78,4 +102,9 @@ logo.addEventListener("click", function(){
       $("body").append(newPage);
     }
   });
+  document.getElementById("about-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "about.html";
+  });
   
+
