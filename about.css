@@ -1,0 +1,51 @@
+body {
+    background-image: url(ai.jpg);
+    background-size: cover;
+  }
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .back-button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .back-button:hover {
+    background-color: rgb(0, 184, 245);
+  }
+.back-to-hangman-button {
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: rgb(0, 191, 255);
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+
+  
