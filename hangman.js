@@ -4,6 +4,7 @@ var lives = 10;
 var displayWord = "_".repeat(wordToGuess.length);
 var usedLetters = [];
 
+
 // Array to store image URLs
 var imageList = [
   "1.jpg",
@@ -47,10 +48,14 @@ function checkLetter() {
       alert("You lose!");
       return;
     }
+  }
+
+  document.getElementById("displayWord").textContent = displayWord;
+}
+
     // Increment the current image index and update the image source
     currentImage++;
     image.src = imageList[currentImage % imageList.length];
-  }
 
   document.getElementById("displayWord").textContent = displayWord;
   document.getElementById("lives").textContent = "Lives: " + lives;
@@ -58,7 +63,7 @@ function checkLetter() {
   if (!displayWord.includes("_")) {
     alert("You win!");
   }
-}
+
 
 // Function to check if the user inputs the full word
 function checkFullWord() {
@@ -75,7 +80,48 @@ function checkFullWord() {
     alert("Incorrect, try again!");
   }
 }
+let correctCount = 0;
+let incorrectCount = 0;
+let scoreCount = 0;
 
+// Update the correct count
+function updateCorrectCount() {
+  correctCount += 1;
+  document.querySelector("#correct-count").innerHTML = correctCount;
+  updateScoreCount();
+}
+
+// Update the incorrect count
+function updateIncorrectCount() {
+  incorrectCount += 1;
+  document.querySelector("#incorrect-count").innerHTML = incorrectCount;
+  updateScoreCount();
+}
+
+// Update the score count
+function updateScoreCount() {
+  scoreCount = correctCount - incorrectCount;
+  document.querySelector("#score-count").innerHTML = scoreCount;
+}
+// Initialize the score
+let score = 0;
+
+// Function to update the score
+function updateScore(value) {
+  score += value;
+  // Update the score display on the page
+  document.getElementById("score").innerHTML = "Score: " + score;
+}
+
+// Example usage:
+updateScore(1); // Increase the score by 1
+updateScore(-1); // Decrease the score by 1
+document.querySelector("form").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      checkLetter();
+    }
+  });
 
 const aboutButton = document.querySelector("a[href='#section1']");
 const aboutSection = document.getElementById("about");
@@ -89,6 +135,30 @@ aboutButton.addEventListener("click", function(){
 });
 
 const logo = document.getElementById("logo");
+
+logo.addEventListener("click", function(){
+    window.location.href =  "https://www.fiverr.com/kalashinsh/expert-web-and-app-development";
+  });
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+      // Add a new page here
+      // For example, you can create a new div element and append it to the body
+      var newPage = $("<div>").text("This is a new page");
+      $("body").append(newPage);
+    }
+  });
+  document.getElementById("about-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "about.html";
+  });
+  function drawLine(x1, y1, x2, y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+  }
+
 
 logo.addEventListener("click", function(){
     window.location.href =  "https://www.fiverr.com/kalashinsh/expert-web-and-app-development";

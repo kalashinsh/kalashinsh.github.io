@@ -20,14 +20,4 @@ body {
     cursor: pointer;
 }
 
-const aboutLink = document.querySelector("#menu a[href='#section1']");
-const aboutSection = document.getElementById("about");
-
-aboutLink.addEventListener("click", function() {
-  if (aboutSection.style.display === "none") {
-    aboutSection.style.display = "block";
-  } else {
-    aboutSection.style.display = "none";
-  }
-});
 
