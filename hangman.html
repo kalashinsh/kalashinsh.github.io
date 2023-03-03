@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Game</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    </head>    
     <link rel="stylesheet" type="text/css" href="hangman.css">
     <link rel="stylesheet" href="animate.css">
     <style>
@@ -14,43 +13,64 @@
         right: 100px;
       }
     </style>
-</head>
-<body>
-  <div id="menu">
+  </head>
+  <body>
+    <div id="menu">
       <ul>
-        <li><a href="about.html" id="about-link">About</a></li>  
-  <div id="logo">
-    <img src="logo.png" alt="Logo">
-  </div>
-  <div id="login-form">
+        <li><a href="about.html" id="about-link">About</a></li>
+      </ul>
+    </div>
+    <div id="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div id="login-form">
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <table>
+      <tr>
+        <td><img src="1.jpg" id="attels1"></td>
+        <td><img src="2.jpg" id="attels2"></td>
+        <td><img src="3.jpg" id="attels3"></td>
+      </tr>
+      <tr>
+        <td><img src="4.jpg" id="attels4"></td>
+        <td><img src="5.jpg" id="attels5"></td>
+        <td><img src="6.jpg" id="attels6"></td>
+      </tr>
+      <tr>
+        <td><img src="7.jpg" id="attels7"></td>
+        <td><img src="8.jpg" id="attels8"></td>
+        <td><img src="9.jpg" id="attels9"></td>
+      </tr>
+    </table>        
+    <div id="scoreboard">
+      <div id="correct">Correct: <span id="correct-count">0</span></div>
+      <div id="incorrect">Incorrect: <span id="incorrect-count">0</span></div>
+      <div id="score">Score: <span id="score-count">0</span></div>
+      <div id="lives">Lives: <span id="lives-count">6</span></div>
+    </div>
+    <p id="displayWord"></p>
+    <div id="used-letters">
+      <p id="display-used-letters">Used letters: </p>
+    </div>
     <form>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password">
-      <button type="submit">Submit</button>
+      <label for="letter">Write a letter:</label>
+      <input type="text" id="letter" name="letter">
+      <button type="button" onclick="checkLetter()">Guess</button>
     </form>
-  </div>
-<div id="scoreboard">
-  <div id="correct">Correct: <span id="correct-count">0</span></div>
-  <div id="incorrect">Incorrect: <span id="incorrect-count">0</span></div>
-  <div id="score">Score: <span id="score-count">0</span></div>
-</div>
-  <p id="displayWord"></p>
-  <p id="lives"></p>
-  <div id="used-letters">
-    <p id="display-used-letters">Used letters: </p>
-  </div>
-  <form>
-    <label for="letter">Write a letter:</label>
-    <input type="text" id="letter" name="letter">
-    <button type="button" onclick="checkLetter()">Guess</button>
-  </form>
-  <div class="copyright">MK Copyright © 2023</div>
-  <script src="hangman.js"></script>
-  <section id="section1" class="about">
-    <h1>About</h1>
-    <p>This is the about section for the hangman game.</p>
-  </section>
-</body>
+    <div class="copyright">
+      MK Copyright © 2023
+    </div>
+    <section id="section1" class="about">
+      <h1>About</h1>
+      <p>This is the about section for the hangman game.</p>
+    </section>
+    <script src="hangman.js"></script>
+  </body>
 </html>
