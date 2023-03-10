@@ -123,10 +123,7 @@ button:hover {
     top: 50%;
     transform: translateY(-50%);
 }
-#hangman-img {
-    width: 20%; /* adjust as needed */
-    height: auto; /* keep aspect ratio */
-}
+
 #lives {
     position: relative; /* position the element relative to its normal position */
     z-index: 0; /* set the z-index to 0 to position it below the hangman image */
@@ -159,7 +156,12 @@ button:hover {
     left: 0;
     width: 100%;
 }
-
+#hangman-image {
+    position: relative;
+    top: -10px;
+  }
+  
+  
     
   
   
