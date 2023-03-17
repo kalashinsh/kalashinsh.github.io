@@ -32,13 +32,28 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-    <table>
+    <table id="table">
       <tr>
-        <td><img id="hangman-image" src="images/hangman-0.jpg"></td>
+        <td><img src="hangman-8.jpg" id="attels1"></td>
+        <td><img src="hangman-7.jpg" id="attels2"></td>
+        <td><img src="hangman-6.jpg" id="attels3"></td>
       </tr>
-    </table>           
+      <tr>
+        <td><img src="hangman-5.jpg" id="attels4"></td>
+        <td><img src="hangman-4.jpg" id="attels5"></td>
+        <td><img src="hangman-3.jpg" id="attels6"></td>
+      </tr>
+      <tr>
+        <td><img src="hangman-2.jpg" id="attels7"></td>
+        <td><img src="hangman-1.jpg" id="attels8"></td>
+        <td><img src="hangman-0.jpg" id="attels9"></td>
+      </tr>
+    </table>  
     <div id="scoreboard">
-    <p id="displayWord"></p>
+      <p>Guessed letters: <span id="guessed-letters">0</span></p>
+      <p>Wrong guesses: <span id="wrong-guesses">0</span></p>
+    </div>          
+    <p id="displayWord">Guess word or get hanged first press guess and start guessing, good luck!</p>
     <div id="used-letters">
       <p id="display-used-letters">Used letters: </p>
     </div>
@@ -50,10 +65,6 @@
     <div class="copyright">
       MK Copyright © 2023
     </div>
-    <section id="section1" class="about">
-      <h1>About</h1>
-      <p>This is the about section for the hangman game.</p>
-    </section>
     <script src="hangman.js"></script>
   </body>
 </html>

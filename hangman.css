@@ -1,7 +1,7 @@
 
 /* Default styles */
 body {
-    background-image: url('mos-design-ArcuXI-i7bQ-unsplash.jpg');
+    background-image: url('background-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; /* or scroll */
@@ -23,14 +23,15 @@ form {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px; /* maina pēc vajadzības*/
-    height: 50px; /* maina pēc vajadzības*/
+    width: 100px; /* maina pēc vajadzības*/
+    height: 100px; /* maina pēc vajadzības*/
     margin-left: 25px;
-    margin-top: 25px;
+    margin-top: 15px;
   }
   #logo img {
     max-width: 100%;
     height: auto;
+    background-color: #f4f4f4;
   }
   #displayWord {
         position: absolute;
@@ -55,11 +56,11 @@ form {
 }
 button {
     /* Gradient background */
-    background: linear-gradient(to bottom, #ff009d, #ff0022);
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
     /* Rounded edges */
     border-radius: 10px;
     /* Text color */
-    color: white;
+    color: rgb(0, 0, 0);
     /* Text size and font */
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -73,30 +74,18 @@ button {
     transition: all 0.2s ease-in-out;
 }
 
-button:hover {
-    /* Change background color on hover */
-    background: linear-gradient(to bottom,  #2196F3,  #2196F3);
-    /* Change cursor on hover */
-    cursor: pointer;
-    /* Scale up on hover */
-    transform: scale(1.1);
-}
 
 #menu li a {
     /* Style for all links in the menu */
     text-decoration: none; /* remove underline */
-    color: rgb(255, 249, 249); /* set text color */
+    color: rgb(0, 0, 0); /* set text color */
     font-size: 1.2em; /* increase font size */
     padding: 10px 20px; /* add padding to the links */
-    background-color: #00fff2; /* add a background color */
+    background-color: #ffffff; /* add a background color */
     border-radius: 10px; /* add rounded corners */
 }
 
-#menu li a:hover {
-    /* Style when the link is hovered over */
-    background-color: #ccc; /* change background color on hover */
-    color: white; /* change text color on hover */
-}
+
 
 #menu li a#section1 {
     /* Style specifically for the "Section 1" link */
@@ -137,29 +126,13 @@ button:hover {
     font-size: 20px;
     text-align: center;
 }
-/* About */
-.about {
-    position: absolute;
-    bottom: 0;
-    width: 100%; /* or any specific width you want */
-    text-align: center; /* or left/right */
-    display: none;
-}
-.about {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  #about-section {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-#hangman-image {
-    position: relative;
-    top: -10px;
-  }
+
+
+  
+  
+
+    
+  
   
   
     

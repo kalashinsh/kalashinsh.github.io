@@ -4,7 +4,23 @@ var lives = 10;
 var displayWord = "_".repeat(wordToGuess.length);
 var usedLetters = [];
 var hangmanImageIndex = 0;
+var correctGuesses = 0;
+var wrongGuesses = 0;
 
+function revealNextImage() {
+  var images = document.getElementsByTagName("img");
+  for (var i = 0; i < images.length; i++) {
+    if (images[i].style.display === "none") {
+      images[i].style.display = "block";
+      return;
+    }
+  }
+}
+
+// Hide the table so that all images are initially hidden
+document.getElementById("my-table").style.display = "none";
+
+// Reveal the images one by one after a letter is entered
 function checkLetter() {
   var letter = document.getElementById("letter").value;
   
@@ -20,14 +36,17 @@ function checkLetter() {
     for (var i = 0; i < wordToGuess.length; i++) {
       if (wordToGuess[i] === letter) {
         displayWord = displayWord.substr(0, i) + letter + displayWord.substr(i + 1);
+        correctGuesses++;
       }
     }
   } else {
     lives--;
     if (lives === 0) {
-      alert("You lose!");
+      alert("You lose! The word was: " + wordToGuess);
+      location.reload();
       return;
     }
+    wrongGuesses++;
     hangmanImageIndex++;
     document.getElementById("hangman-image").src = "images/hangman-" + hangmanImageIndex + ".jpg";
   }
@@ -36,49 +55,46 @@ function checkLetter() {
   document.getElementById("lives").textContent = "Lives: " + lives;
 
   if (!displayWord.includes("_")) {
-    alert("You win!");
+    alert("You win! The word was: " + wordToGuess);
+    location.reload();
+    return;
   }
   
   if (hangmanImageIndex === 6) {
+    alert("You lose! The word was: " + wordToGuess);
+    location.reload();
+    return;
+  }
+  
+  // When a letter is wrong, reveal the next image
+  revealNextImage();
+  
+  // Increase the correct or wrong result depending on the guess
+  document.getElementById("correct").textContent = "Correct: " + correctGuesses;
+  document.getElementById("wrong").textContent = "Wrong: " + wrongGuesses;
+}
+
+// Check if the full word has been guessed
+function checkFullWord() {
+  var fullWord = document.getElementById("fullWord").value;
+  if (fullWord === wordToGuess) {
+    alert("You win!");
+    return;
+  } else {
+    lives = 0;
     alert("You lose!");
     return;
   }
 }
 
+// Add event listeners to the submit buttons
+document.getElementById("submit-letter").addEventListener("click", checkLetter);
+document.getElementById("submit-full-word").addEventListener("click", checkFullWord);
 
-// Function to check if the user inputs the full word
-function checkFullWord() {
-  var fullWord = document.getElementById("fullWord").value;
-  if (fullWord === wordToGuess) {
-    alert("You win!");
-  } else {
-    lives--;
-    if (lives === 0) {
-      alert("You lose!");
-      return;
-    }
-    hangmanImageIndex++;
-    document.getElementById("hangman-image").src = "images/hangman-" + hangmanImageIndex + ".jpg";
-    document.getElementById("lives").textContent = "Lives: " + lives;
-    alert("Incorrect, try again!");
-  }
-}
 
-const aboutButton = document.querySelector("a[href='#section1']");
-const aboutSection = document.getElementById("about");
 
-aboutButton.addEventListener("click", function(){
-    if(aboutSection.style.display === "none"){
-        aboutSection.style.display = "block";
-    } else {
-        aboutSection.style.display = "none";
-    }
-});
 
-const logo = document.getElementById("logo");
 
-logo.addEventListener("click", function(){
-    window.location.href =  "https://www.fiverr.com/kalashinsh/expert-web-and-app-development";
-});
+
 
   
