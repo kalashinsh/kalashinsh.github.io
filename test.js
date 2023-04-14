@@ -11,3 +11,15 @@ function showImage() {
   image = document.getElementById(images[currentImage]);
   image.style.display = 'block';
 }
+
+// Hide all images
+var allImages = document.getElementsByTagName('img');
+for (var i = 0; i < allImages.length; i++) {
+    allImages[i].style.display = 'none';
+}
+
+// Add a button to show the images
+var button = document.createElement('button');
+button.innerHTML = 'Show images';
+button.onclick = showImage;
+document.body.appendChild(button);

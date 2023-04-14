@@ -32,6 +32,13 @@
         <button type="submit">Submit</button>
       </form>
     </div>
+    <style>
+      #table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+    </style>
+    
     <table id="table">
       <tr>
         <td><img src="hangman-8.jpg" id="attels1"></td>
@@ -48,11 +55,26 @@
         <td><img src="hangman-1.jpg" id="attels8"></td>
         <td><img src="hangman-0.jpg" id="attels9"></td>
       </tr>
-    </table>  
+    </table>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Instructions:</p>
+        <ul>
+          <li>Press Guess</li>
+          <li>Enter a letter into the input field and click "Check Letter".</li>
+          <li>If the letter is correct, it will be displayed in the word. If it's incorrect, the hangman image will be updated and you will lose a life.</li>
+          <li>You have 6 lives. If you lose all of them, the game is over.</li>
+          <li>If you correctly guess all the letters in the word before losing all your lives, you win!</li>
+        </ul>
+        <p>We recommend you to check our about page</p>
+      </div>
+    </div>    
     <div id="scoreboard">
-      <p>Guessed letters: <span id="guessed-letters">0</span></p>
+      <p>Guessed letters: <span id="correctGuesses">0</span></p>
       <p>Wrong guesses: <span id="wrong-guesses">0</span></p>
-    </div>          
+    </div>    
+    <button id="instructions-btn">Instructions</button>      
     <p id="displayWord">Guess word or get hanged first press guess and start guessing, good luck!</p>
     <div id="used-letters">
       <p id="display-used-letters">Used letters: </p>
@@ -65,6 +87,18 @@
     <div class="copyright">
       MK Copyright © 2023
     </div>
+    <script>const instructionsBtn = document.getElementById("instructions-btn");
+      const modal = document.getElementById("modal");
+      const closeBtn = document.querySelector(".close");
+      
+      instructionsBtn.addEventListener("click", function() {
+        modal.style.display = "block";
+      });
+      
+      closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+      </script>
     <script src="hangman.js"></script>
   </body>
 </html>

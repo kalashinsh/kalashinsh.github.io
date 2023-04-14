@@ -1,18 +1,39 @@
-<table id="table">
-    <tr>
-      <td><button onclick="showImage()"><img src="hangman-8.jpg" id="attels1"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-7.jpg" id="attels2"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-6.jpg" id="attels3"></button></td>
-    </tr>
-    <tr>
-      <td><button onclick="showImage()"><img src="hangman-5.jpg" id="attels4"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-4.jpg" id="attels5"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-3.jpg" id="attels6"></button></td>
-    </tr>
-    <tr>
-      <td><button onclick="showImage()"><img src="hangman-2.jpg" id="attels7"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-1.jpg" id="attels8"></button></td>
-      <td><button onclick="showImage()"><img src="hangman-0.jpg" id="attels9"></button></td>
-    </tr>
-  </table>
-  <script src="test.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    var images = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+    var currentIndex = 0;
+
+    function showNextImage() {
+      // Hide the current image
+      var currentImage = document.getElementById('image' + currentIndex);
+      currentImage.classList.add('hidden');
+
+      // Move to the next image
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+
+      // Show the next image
+      var nextImage = document.getElementById('image' + currentIndex);
+      nextImage.classList.remove('hidden');
+    }
+  </script>
+</head>
+<body>
+  <img id="image0" src="hangman-8.jpg">
+  <img id="image1" src="hangman-7.jpg" >
+  <img id="image2" src="hangman-6.jpg" >
+  <button onclick="showNextImage()">Show Next Image</button>
+</body>
+</html>
+
+
+

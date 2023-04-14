@@ -6,6 +6,48 @@ var usedLetters = [];
 var hangmanImageIndex = 0;
 var correctGuesses = 0;
 var wrongGuesses = 0;
+var instructionsButton = document.getElementById("instructions-button");
+var instructionsModal = document.getElementById("instructions-modal");
+var instructionsCloseButton = document.getElementById("instructions-close-button");
+
+instructionsButton.addEventListener("click", function() {
+  instructionsModal.style.display = "block";
+});
+
+instructionsCloseButton.addEventListener("click", function() {
+  instructionsModal.style.display = "none";
+});
+
+
+var form = document.getElementById("myForm");
+// Izveidojiet dialoga loga elementu
+var modal = document.createElement("div");
+modal.classList.add("modal");
+
+// Izveidojiet elementu, lai parādītu aprakstu
+var description = document.createElement("p");
+description.textContent = "Šeit ir jūsu uzdevums: jums jāmin vārds, izmantojot vārdnīcas vārdus. Jums ir 6 dzīvības, lai minētu pareizos vārdus, un katrs nepareizs burts pievieno 1 līdz 6 dzīvības. Veiksmi!";
+
+// Pievienojiet apraksta elementu dialoga logam
+modal.appendChild(description);
+
+// Pievienojiet dialoga logu lapā
+document.body.appendChild(modal);
+
+// Kad tiek noklikšķināts uz pogas, parādiet dialoga logu
+var helpButton = document.getElementById("help-button");
+helpButton.addEventListener("click", function() {
+  modal.style.display = "block";
+});
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+});
+function checkLetter(event) {
+  if (event.keyCode === 13) {
+    var letter = document.getElementById("letter").value;
+  }
+}
 
 function revealNextImage() {
   var images = document.getElementsByTagName("img");
